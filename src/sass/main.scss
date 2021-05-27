@@ -1,0 +1,28 @@
+/*
+ * Главный файл стилей.
+ * Все паршалы подключаются сюда.
+ */
+
+// Стили для файла с примером HTML-фрагмента
+// @import './example';
+@import '@pnotify/core/dist/BrightTheme.css';
+
+.pnotalert {
+  top: 25px;
+  right: 25px;
+  position: absolute;
+  height: auto;
+  z-index: 9999;
+}
+
+.countries-section {
+  width: 600px;
+
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
+.countries-input {
+  width: 100%;
+}
