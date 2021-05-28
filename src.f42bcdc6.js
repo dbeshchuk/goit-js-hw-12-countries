@@ -3,7 +3,7 @@ parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcel
 },{}],"clu1":[function(require,module,exports) {
 
 },{"@pnotify/core/dist/BrightTheme.css":"xSVp"}],"irxn":[function(require,module,exports) {
-"use strict";function e(e){return new Promise(function(t,n){fetch("https://restcountries.eu/rest/v2/name/".concat(e)).then(function(e){e.status,t(e.json())})})}Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=e;
+"use strict";function e(e){return new Promise(function(t,n){fetch("https://restcountries.eu/rest/v2/name/".concat(e)).then(function(e){404==e.status&&n(new Error),t(e.json())})})}Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=e;
 },{}],"pAws":[function(require,module,exports) {
 var define;
 var global = arguments[3];
@@ -22,4 +22,4 @@ var t=arguments[3],e="Expected a function",n=NaN,r="[object Symbol]",i=/^\s+|\s+
 },{}],"Focm":[function(require,module,exports) {
 "use strict";require("/sass/main.scss");var e=i(require("/js/fetchCountries.js")),t=i(require("/templates/countries-list.hbs")),n=i(require("/templates/country-description.hbs")),r=require("@pnotify/core"),s=i(require("lodash.debounce"));function i(e){return e&&e.__esModule?e:{default:e}}var o=document.querySelector(".countries-container"),u=document.querySelector(".countries-input");u.addEventListener("input",(0,s.default)(function(){(0,e.default)(u.value).then(function(e){if(console.log(e),1===e.length)o.innerHTML="",o.insertAdjacentHTML("beforeend",(0,n.default)(e));else if(e.length>1&&e.length<10)o.innerHTML="",o.insertAdjacentHTML("beforeend",(0,t.default)(e));else if(e.length>10)return o.innerHTML="",(0,r.alert)({delay:5e3,maxOpen:1,icon:!1,closer:!1,sticker:!1,addClass:"pnotalert",text:"Too many matches found. Please enter a more specific query !"})}).catch(function(){return o.innerHTML="",(0,r.error)({delay:5e3,maxOpen:1,icon:!1,closer:!1,sticker:!1,addClass:"pnotalert",text:"No matches found. Please enter a correct query !"})})},500));
 },{"/sass/main.scss":"clu1","/js/fetchCountries.js":"irxn","/templates/countries-list.hbs":"VUQC","/templates/country-description.hbs":"JPfT","@pnotify/core":"txz9","lodash.debounce":"PZFh"}]},{},["Focm"], null)
-//# sourceMappingURL=/goit-js-hw-12-countries/src.959e3462.js.map
+//# sourceMappingURL=/goit-js-hw-12-countries/src.f42bcdc6.js.map
