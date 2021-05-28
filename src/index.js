@@ -3,7 +3,7 @@ import '/js/fetchCountries.js';
 
 import countriesTemplate from '/templates/countries-list.hbs';
 import countryDescription from '/templates/country-description.hbs';
-
+import fetchCountries from '/js/fetchCountries.js'
 import { error, alert } from '@pnotify/core';
 import debounce from 'lodash.debounce';
 
@@ -11,15 +11,10 @@ import debounce from 'lodash.debounce';
 const countriesList = document.querySelector('.countries-container')
 const countriesInput = document.querySelector('.countries-input')
 
-function fetchCountries(searchQuery) {
-  fetch(`https://restcountries.eu/rest/v2/name/${searchQuery}`)
-    .then(response => {
-      if (response.status == 404) {
-        reject
-      }
-      
-      return response.json();
-    })
+
+
+countriesInput.addEventListener('input', debounce(() => {
+  fetchCountries(countriesInput.value)
     .then(data => {
       console.log(data);
       
@@ -32,22 +27,21 @@ function fetchCountries(searchQuery) {
       } else if (data.length > 10) {
         countriesList.innerHTML = '';
         
-        alert({
-        delay: 5000,
-        maxOpen: 1,
-        icon: false,
-        closer: false,
-        sticker: false,
-        addClass: 'pnotalert',
-        text: "Too many matches found. Please enter a more specific query !",
-      });
-
+        return alert({
+          delay: 5000,
+          maxOpen: 1,
+          icon: false,
+          closer: false,
+          sticker: false,
+          addClass: 'pnotalert',
+          text: "Too many matches found. Please enter a more specific query !",
+        });
       }
     })
     .catch(() => {
       countriesList.innerHTML = '';
 
-      error({
+      return error({
         delay: 5000,
         maxOpen: 1,
         icon: false,
@@ -57,8 +51,4 @@ function fetchCountries(searchQuery) {
         text: "No matches found. Please enter a correct query !"
       });
     })
-}
-
-countriesInput.addEventListener('input', debounce(() => {
-  fetchCountries(countriesInput.value)
 }, 500))
