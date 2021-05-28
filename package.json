@@ -1,24 +1,24 @@
 {
-  "name": "goit-js-hw-11-color-switch",
+  "name": "goit-js-hw-12-countries",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "homepage": "https://dbeshchuk.github.io/goit-js-hw-11-color-switch",
+  "homepage": "https://dbeshchuk.github.io/goit-js-hw-12-countries",
   "scripts": {
     "dev": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /goit-js-hw-11-color-switch/",
+    "build": "parcel build src/*.html --public-url /goit-js-hw-12-countries/",
     "deploy": "gh-pages -d dist",
     "predeploy": "npm run build --no-optimize"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dbeshchuk/goit-js-hw-11-color-switch.git"
+    "url": "git+https://github.com/dbeshchuk/goit-js-hw-12-countries.git"
   },
   "keywords": [],
   "author": "Dmytro Beshchuk <dmytro.beshchuk@protonmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/dbeshchuk/goit-js-hw-11-color-switch/issues"
+    "url": "https://github.com/dbeshchuk/goit-js-hw-12-countries/issues"
   },
   "devDependencies": {
     "@pnotify/core": "^5.2.0",
